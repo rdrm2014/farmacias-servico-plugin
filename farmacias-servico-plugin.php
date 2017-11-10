@@ -43,12 +43,14 @@ function farmacia($options, $flagService, $count){
 			echo '<li>';
 		  foreach($arr as $item) {
 				$href =  $item->getAttribute("href");
-				echo '<strong><a href="'.$url . '' . $item->getAttribute("href").'">';
+				echo '<a href="'.$url . '' . $item->getAttribute("href").'">';
+				echo '<strong>';
 				echo $item->nodeValue;
 				if ($flagService){
 					echo ' (de Serviço)';
 				}
-				echo '</a></strong>';
+				echo '</strong>';
+				echo '</a>';
 		  }
 			$arr = $xpath->query("./p", $link);
 			foreach($arr as $item) {
